@@ -1,0 +1,14 @@
+FROM {{ namespace }}/{{ image_prefix }}skydive-base:{{ tag }}
+LABEL maintainer="{{ maintainer }}" name="{{ image_name }}" build-date="{{ build_date }}"
+
+{% block skydive_analyzer_header %}{% endblock %}
+
+{% import "macros.j2" as macros with context %}
+
+{% block skydive_analyzer_install %}{% endblock %}
+
+{% block skydive_analyzer_footer %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+USER skydive
